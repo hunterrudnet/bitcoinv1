@@ -14,8 +14,11 @@ formatted_percentage = "{:.1%}".format(percent/100000)
 
 scrape_rate = input("What would you like your refresh rate to be? (in seconds)")
 print("Ok...setting the refresh rate to {} seconds".format(scrape_rate))
+duration = input("How many seconds would you like the program to run for?")
+print("Ok...setting the program to run for {} seconds".format(duration))
 
-while seconds < 60:
+
+while seconds < int(duration):
     url = requests.get('https://index-api.bitcoin.com/api/v0/price/usd').json()
     price = url['price']
     x.append(seconds/10)
